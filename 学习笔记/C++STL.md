@@ -3,7 +3,7 @@
 
 
 ```http
-https://www.fynote.com/d/2747#10-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5_1
+https://www.fynote.com/d/2747
 ```
 
 
