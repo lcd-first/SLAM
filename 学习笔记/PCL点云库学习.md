@@ -4,11 +4,6 @@
 
 # 日志
 
-- 5月11日
-  - 滤波
-
-
-
 # 资料
 
 - 3D 视觉工坊 
@@ -660,20 +655,6 @@ pcl::filters::GaussianKernal<PointInT，PointOutT>高斯滤波
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 6. 点云分割算法
 
 ## 1. 基本概念
@@ -704,21 +685,109 @@ pcl::filters::GaussianKernal<PointInT，PointOutT>高斯滤波
 
 
 
-
-
 -  欧式聚类分割方法
-- 条件欧式聚类分割
-- 基于区域生长的分割
-- 基于颜色的区域生长分割
-- 最小图割的分割
-- 基于法线微分的分割
-- 基于超体素的分割
+
+聚类方法，通过特征空间确定点与点之间的亲疏程度
+
+算法流程： 
+
+1. 找到空间中某点p，有kdTree 找到离他最近的n个点，判断这n个点到p的距离，将距离小于阈值r的点放在p1,p2,p3 放在类Q中
+2. 在Q  里面 找到一个点P1 重复1，找到p22 p23 p24 全部放进Q里
+3. 当Q 再也不能有新点加入了，则完成搜索了
+
+-  条件欧式聚类分割
+
+使用类pcl::ConditionEuclidenanClustering 实现点云分割，与其他分割方法不同的是该方法的聚类约束条件（欧式距离，平滑度，RGB颜色）可以由用户自己定义，即当搜索到一个近邻点时，用户可以自定义该领域点是否合并到当前聚类的条件
+
+```c++
+pcl::ConditionalEuclidenanClustering<PointTypeFull> cec(true);//创造条件聚类分割对象，进行初始化
+cec.setInputCloud (cloud_with_normals); //设置输入点集
+//用于选择不同条件函数
+switch(Method) {
+    case 1 :
+        cec.setConditionFunction(&enforceIntensitySimilarity);
+        break;
+    case 2:
+        cec.setConditionFunction(&enforceCurvatureOrIntensitySimilarity);
+     
+}
+cec.setClusterTolerance (500.0); //设置聚类参考点的搜索距离
+cec.setMinClusterSize(cloud_with_normals->points.size()/1000); //设置过小聚类的标准
+cec.setMaxClusterSize(cloud_with_normals->points.size() /5); //设置多大聚类的标准
+cec.segment (*clusters);// 获取聚类的结果，分割结果保存在点云索引的向量
+cec.getRemovedClusters(small_clusters，large_cluster);//获取无效尺寸的聚类
+
+
+//如果此函数返回true。则将添加候选点到种子点的聚类中
+bool customCondition(const pcl::PointXYZ& seedPoint,const pcl::PointXYZ& candidatePoint, float squaredDistance) {
+    //添加自定义条件
+    return false;
+    return true;
+     
+}
+```
+
+
+
+-  基于区域生长的分割
+
+将具有相似性的点云集合起来构成区域
+
+首先对于每个需要分割的区域找出一个种子点作为生长的起点，然后将种子点周围邻域中与种子有相同或相似性质的点合并到种子像素
+
+所在的区域中，而新的点继续作为种子向四周生长， 直到再没有满足条件的像素可以包括进来，一个区域就生长而成了
+
+算法流程：
+
+1. 计算 法线normal 和曲率curvatures ,依据曲率升序排列
+2. 选择曲率最低的为初始种子点，种子周围的临近点和种子点云相比较
+3. 法线的方向是否足够相近（法线夹角足够 rpy) 法线夹角阈值
+4. 曲率是否足够小（表面处于同一个弯曲程度），区域插值阈值
+5. 如果满足2，3 则该点可用作种子点
+6. 如果只满足2 ，则归类而不做种子
+
+```c++
+//区域增长聚类分割对象 <点，法线> 
+pcl::RegionGrowing<pcl::PointXYZ,pcl::Normal> reg;
+reg.setMinClusterSize (50); //最小的聚类的点数
+reg.setMaxClusterSize(100000); //最大的聚类的点数
+reg.setSearchMethod(tree);//搜索方式
+reg.setNumberOfNeighbours(30);//设置搜索的邻域点的个数
+reg.setInputCloud(cloud); //输入点
+reg.setInputNormals(normals);//输入的法线
+reg.setSmoothnessThreshold(3.0/180*M_PI);// 设置平滑度 法线差值阈值
+reg.setCurvatureThreshold(1.0);// 设置曲率的阈值
+```
+
+
+
+
+
+-  基于颜色的区域生长分割
+-  最小图割的分割
+
+图论的最小割广泛应用在网络规划，求解桥问题，图像分割等领域
+
+如果要分开最左边的点，和最右边的点，红绿两种割法都是可行的，但是红线跨过了三条线，绿线只跨过了两条，单从跨线数量上来论
+
+可以得出绿线这种切割方法更优的结论，但假设线上有不同的权值，那么最优切割则和权值有关了
 
 
 
 
 
 
+
+
+
+
+
+-  基于法线微分的分割
+-  基于超体素的分割
+
+与体素滤波器类似，本质是一个个小方块，与之前提到了所有分割不同，对点云实施分割，将场景点云化成很多小块，并研究每个小块之间的关系
+
+以八叉树对点云进行划分，获得不同点团之间的临近关系，与图像相似，点云的临近关系有很多，如面邻接，线邻接，点邻接 
 
 
 
@@ -746,7 +815,63 @@ pcl::filters::GaussianKernal<PointInT，PointOutT>高斯滤波
 
 
 
+
+
+
+
+
+
+
+
+‘
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 7. 点云配准基础
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -762,7 +887,23 @@ pcl::filters::GaussianKernal<PointInT，PointOutT>高斯滤波
 
 # 9. 点云重建
 
+## 1. 介绍
 
+
+
+
+
+## 2. 凸包算法
+
+
+
+
+
+## 3. 曲面重建
+
+
+
+## 4. 点云补全
 
 
 
