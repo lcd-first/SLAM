@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="shared_ptr"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/SLAM/code/week_03/shared_ptr/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="shared_ptr">
+				<Option output="D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/shared_ptr.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/SLAM/code/week_03/shared_ptr/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/sorftware/CLion 2022.1.3/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/sorftware/CLion 2022.1.3/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/sorftware/CLion 2022.1.3/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/sorftware/CLion 2022.1.3/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/sorftware/CLion 2022.1.3/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/sorftware/CLion 2022.1.3/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr"/>
+					<CompileFile command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="shared_ptr/fast">
+				<Option output="D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/shared_ptr.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/SLAM/code/week_03/shared_ptr/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/sorftware/CLion 2022.1.3/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/sorftware/CLion 2022.1.3/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/sorftware/CLion 2022.1.3/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/sorftware/CLion 2022.1.3/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/sorftware/CLion 2022.1.3/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/sorftware/CLion 2022.1.3/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr/fast"/>
+					<CompileFile command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/SLAM/code/week_03/shared_ptr/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/SLAM/code/week_03/shared_ptr/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/SORFTW~1/CLION2~1.3/mingw64/mingw64/bin/mingw32-make.exe -f &quot;D:/SLAM/code/week_03/shared_ptr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/SLAM/code/week_03/shared_ptr/main.cpp">
+			<Option target="shared_ptr"/>
+		</Unit>
+		<Unit filename="D:/SLAM/code/week_03/shared_ptr/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
