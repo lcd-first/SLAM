@@ -72,3 +72,40 @@ https://github.com/xiangli0608/Creating-2D-laser-slam-from-scratch
 
 
 ![image-20240522100504689](D:\SLAM\学习笔记\EG-SLAM.assets\image-20240522100504689.png)
+
+
+
+## 2.  使用PCL 进行雷达消息类型转换
+
+​	sensor_msgs/LaserScan转换成的sensor_msgs/PointCloud2
+
+
+
+
+
+
+
+
+
+## 3. ICP 帧间匹配
+
+使用转换格式后的点云，调用ICP算法进行相邻两帧雷达数据间坐标变换的计算
+
+![image-20240528110242952](D:\SLAM\学习笔记\EG-SLAM.assets\image-20240528110242952.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
