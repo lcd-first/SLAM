@@ -95,6 +95,77 @@ https://github.com/xiangli0608/Creating-2D-laser-slam-from-scratch
 
 
 
+## 4. PL-ICP的帧建匹配
+
+ICP的计算时间以及精度都不太好， 使用ICP改进算法 PL-ICL算法来计算相邻帧间的坐标变换PL
+
+PL-ICP 使用点到线距离最小的方式进行ICP的计算，收敛速度快，精度高
+
+
+
+PL-ICP 作者开源资料： 
+
+```
+https://censi.science/software/csm/.
+wiki 地址：
+http://wiki.ros.org/scan_tools?distro=kinetic
+```
+
+功能包介绍：
+
+- laser_ortho_projector: 将切斜的雷达数据投影到平面上．
+- laser_scan_matcher: 基于pl-icp的扫描匹配的实现，并进行了位姿累加
+- laser_scan_sparsifier: 对雷达数据进行稀疏处理
+- laser_scan_splitter: 将一帧雷达数据分段，并发布出去
+- ncd_parser: 读取New College Dataset，转换成ros的scan 与 odometry 发布出去
+- polar_scan_matcher: 基于Polar Scan Matcher的扫描匹配器的ros实现
+- scan_to_cloud_converter: 将 sensor_msgs/LaserScan 数据转成 sensor_msgs/PointCloud2 的数据格式
+  
+
+
+
+![image-20240529112023302](D:\SLAM\学习笔记\EG-SLAM.assets\image-20240529112023302.png)
+
+
+
+
+
+
+
+## 5. PL-ICP的激光雷达里程计
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
