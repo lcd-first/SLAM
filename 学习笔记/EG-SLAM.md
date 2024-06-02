@@ -95,7 +95,7 @@ https://github.com/xiangli0608/Creating-2D-laser-slam-from-scratch
 
 
 
-## 4. PL-ICP的帧建匹配
+## 4. PL-ICP的帧间匹配
 
 ICP的计算时间以及精度都不太好， 使用ICP改进算法 PL-ICL算法来计算相邻帧间的坐标变换PL
 
@@ -132,7 +132,7 @@ http://wiki.ros.org/scan_tools?distro=kinetic
 
 
 
-## 5. PL-ICP的激光雷达里程计
+## 
 
 
 
