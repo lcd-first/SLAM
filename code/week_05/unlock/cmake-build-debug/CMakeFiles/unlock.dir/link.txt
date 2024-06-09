@@ -1,0 +1,3 @@
+"D:\sorftware\CLion 2022.1.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\unlock.dir/objects.a
+D:\SORFTW~1\CLION2~1.3\mingw64\mingw64\bin\ar.exe qc CMakeFiles\unlock.dir/objects.a @CMakeFiles\unlock.dir\objects1.rsp
+D:\SORFTW~1\CLION2~1.3\mingw64\mingw64\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\unlock.dir/objects.a -Wl,--no-whole-archive -o unlock.exe -Wl,--out-implib,libunlock.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\unlock.dir\linklibs.rsp
